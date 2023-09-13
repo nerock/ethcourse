@@ -28,6 +28,7 @@ contract Lottery {
         require(msg.sender == manager || players.length >= 10, "Only the manager can pick a winner if there are less than 10 players");
         require(players.length >= 3, "Need at least 3 players before picking a winner");
 
+        payable(manager).transfer(getBalance()/10);
         players[random() % players.length].transfer(getBalance());
         players = new address payable[](0);
     }
