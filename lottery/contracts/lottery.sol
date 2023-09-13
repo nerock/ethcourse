@@ -11,6 +11,7 @@ contract Lottery {
     }
 
     receive() external payable {
+        require(msg.sender != manager, "The manager can not participate");
         require(msg.value == 0.1 ether, "Only accepting 0.1 ether purchases");
 
         players.push(payable(msg.sender));
