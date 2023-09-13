@@ -1,0 +1,1 @@
+Code developed following the udemy course [Master Ethereum & Solidity Programming From Scratch in 2023](https://www.udemy.com/course/master-ethereum-and-solidity-programming-with-real-world-apps/)
