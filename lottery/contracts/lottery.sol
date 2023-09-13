@@ -8,6 +8,7 @@ contract Lottery {
 
     constructor() {
         manager = msg.sender;
+        players.push(payable(manager));
     }
 
     receive() external payable {
