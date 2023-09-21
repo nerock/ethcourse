@@ -29,7 +29,7 @@ contract Cryptos is IERC20 {
     return balances[tokenOwner];
   }
 
-  function transfer(address to, uint tokens) higherThanZero(tokens) public override returns (bool success) {
+  function transfer(address to, uint tokens) higherThanZero(tokens) public virtual override returns (bool success) {
     require(balances[msg.sender] >= tokens, "Not enough funds to transfer");
 
     balances[to] += tokens;
@@ -54,7 +54,7 @@ contract Cryptos is IERC20 {
     return true;
   }
 
-  function transferFrom(address from, address to, uint tokens) higherThanZero(tokens) public override returns (bool success) {
+  function transferFrom(address from, address to, uint tokens) higherThanZero(tokens) public virtual override returns (bool success) {
     require(allowed[from][msg.sender] >= tokens, "Not enough approved funds to transfer");
     require(balances[from] >= tokens, "Not enough funds to transfer");
 
